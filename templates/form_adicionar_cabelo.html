@@ -1,26 +1,26 @@
 {% extends 'main_template.html' %}
 
 {% block header %}
-<h1>{% block title %}Cadastrar animal{% endblock %}</h1>
+<h1>{% block title %}Cadastrar cabelo{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
 
-<form action="adicionar_animal">
+<form action="adicionar_cabelo">
     <p>
-        Nome: <input type="text" name="nome" value="cachorro joca">
+        tipo: <input type="text" name="tipo" value="cacheado">
     </p>
     <p>
-        alimentacao: <input type="text" name="alimentacao" value="carne">
+        corte: <input type="text" name="corte" value="longo">
     </p>
     <p>
-        sexo: <input type="text" name="sexo" value="macho">
+        cor: <input type="text" name="cor" value="ruivo">
     </p>
     <p>
-        idade: <input type="text" name="idade" value="1 ano">
+        idade: <input type="text" name="idade" value="2 ano">
     </p>
     <p>
-        especie: <input type="text" name="especie" value="canis">
+        comprimento: <input type="text" name="comprimento" value="30 cm">
     </p>
 
     <button>Cadastrar</button>
