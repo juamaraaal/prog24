@@ -5,30 +5,32 @@ from model import *
 def home():
     return render_template("home.html")
 
-@app.route("/listar_animais")
-def listar_animais():
+@app.route("/listar_cabelos")
+def listar_cabelos():
     with db_session:
-        # obtém os animais
-        animais = Animal.select() 
-        return render_template("listar_.html", animais=animais)
+        # obtém os cabelos
+        cabelos = Cabelo.select() 
+        return render_template("listar_cabelos.html", cabelos=cabelos)
 
-@app.route("/form_adicionar_pessoa")
-def form_adicionar_pessoa():
-    return render_template("form_adicionar_pessoa.html")
+@app.route("/form_adicionar_cabelo")
+def form_adicionar_cabelo():
+    return render_template("form_adicionar_cabelo.html")
 
-@app.route("/adicionar_pessoa")
-def adicionar_pessoa():
+@app.route("/adicionar_cabelo")
+def adicionar_cavelo():
     # obter os parâmetros
-    nome = request.args.get("nome")
-    email = request.args.get("email")
-    telefone = request.args.get("telefone")
+    tipo = request.args.get("tipo")
+    corte = request.args.get("corte")
+    cor = request.args.get("cor")
+    idade= request.args.get("idade")
+    comprimento = request.args.get("comprimento")
     # salvar
     with db_session:
-        # criar a pessoa
-        p = Pessoa(**request.args)
+        # criar o cabelo
+        a = Cabelo(**request.args)
         # salvar
         commit()
         # encaminhar de volta para a listagem
-        return redirect("listar_pessoas")
-
-app. run(debug=True)
+        return redirect("listar_cabelos")
+    
+app.run(debug=True)
